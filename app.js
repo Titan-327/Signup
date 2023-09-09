@@ -30,9 +30,11 @@ const data ={
 const jsonData=JSON.stringify(data);
 const url=" https://us21.api.mailchimp.com/3.0/lists/20541f5f8a";
 
+const API = process.env.API_KEY
+
 const options={
     method:"POST",
-    auth:"Titan:946c7901e6ac3473a6f8e6518e8dc23c-us21"
+    auth:"Titan:"+ API
 }
 const request=https.request(url,options, function(response){
     if(response.statusCode===200){
